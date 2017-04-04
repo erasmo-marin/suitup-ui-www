@@ -4481,9 +4481,9 @@ style-loader@^0.15.0:
   dependencies:
     loader-utils "^1.0.2"
 
-suitup-ui@^0.3.12:
-  version "0.3.12"
-  resolved "https://registry.yarnpkg.com/suitup-ui/-/suitup-ui-0.3.12.tgz#fb8299bc1a1e1f64a1cd7dd217d19be3a798b0c0"
+suitup-ui@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/suitup-ui/-/suitup-ui-0.4.0.tgz#da6a31eeb075aa8b0967f239bb9d125b38f7ee42"
   dependencies:
     "@zippytech/react-notify-resize" "^2.1.2"
     classnames "^2.2.5"
@@ -4494,7 +4494,6 @@ suitup-ui@^0.3.12:
     react-addons-shallow-compare "^15.4.0"
     react-draggable "^2.2.3"
     react-inview-js "^1.2.7"
-    react-router-dom "^4.0.0"
 
 supports-color@^2.0.0:
   version "2.0.0"

@@ -9,7 +9,7 @@ var helpers = require("./views/helpers");
 var webpack = require("webpack");
 var compression = require('compression');
 var helmet = require('helmet');
-var oneDay = 86400000;
+var oneWeek = 7*86400000;
 
 //routes
 var routes = require("./routes/index");
@@ -19,7 +19,7 @@ app.use(helmet({
     noCache: false
 }));
 app.use(compression());
-app.use(express.static(path.join(__dirname, "public"), { maxAge: oneDay/2, lastModified: true }));
+app.use(express.static(path.join(__dirname, "public"), { maxAge: oneWeek, lastModified: true }));
 
 
 if(process.env.NODE_ENV != "production") {
