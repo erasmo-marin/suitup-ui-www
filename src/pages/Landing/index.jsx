@@ -17,6 +17,7 @@ import {
     Tabs,
     Scroll
 } from "suitup-ui";
+import { Link } from "react-router-dom";
 import { PrismCode } from "react-prism";
 
 class Landing extends React.Component {
@@ -27,36 +28,36 @@ class Landing extends React.Component {
     scrollToGettingStarted = () => Scroll.to(this._gettingStarted, 1000);
 
     render() {
-        let heroStyle = {
+        const heroStyle = {
             background: "linear-gradient(161deg, rgba(53,215,187,1) 0%, rgba(0,128,128,1) 100%)",
             color: "#fff",
             height: "80vh",
             minHeight: "600px"
         };
 
-        let heroChildStyle = {
+        const heroChildStyle = {
             backgroundImage: "url(/img/noise.png)",
             backgroundRepeat: "repeat",
             width: "100%",
             height: "100%"
         };
 
-        let featuresSection = {
+        const featuresSection = {
             background: "#f7f7f7"
         };
 
-        let gettingStartedSection = {
+        const gettingStartedSection = {
             borderTop: "1px solid #dedede",
             background: "#fdfdfd"
         };
 
-        let icons = {
+        const icons = {
             background: "#d23778",
             color: "#fff",
             textAlign: "center"
         };
 
-        let iconWides = {
+        const iconWides = {
             tablet: 3,
             mobile: 6
         };
@@ -134,7 +135,10 @@ class Landing extends React.Component {
                                         ref={c => this._scrollBtn = c}
                                         onClick={this.scrollToGettingStarted}
                                         style={{
-                                            mobile: { margin: "0 auto", display: "block" }
+                                            mobile: {
+                                                margin: "0 auto",
+                                                display: "block"
+                                            }
                                         }}
                                     >
                                         Get Started
@@ -161,7 +165,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Customizable</h3>
                                 <p>
-                                    Flexible and configurable in runtime. Suitup UI adhere to Progressive Truthfulness.
+                                    {
+                                        "Flexible and configurable, extensible and themeable. No, it's not another material design implementation."
+                                    }
                                 </p>
                             </Box.Child>
                             <Box.Child
@@ -178,7 +184,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Responsive</h3>
                                 <p>
-                                    Ready to run in phones, tablets and big screens. Save time with our responsive components.
+                                    {
+                                        "Ready to run in phones, tablets and big screens. Save time with our responsive components and responsive inline styles."
+                                    }
                                 </p>
                             </Box.Child>
                             <Box.Child
@@ -195,7 +203,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Extensible</h3>
                                 <p>
-                                    Build your components with the basic pieces we provide. Most of the components accept children as prop.
+                                    {
+                                        "Build your components with the basic construction blocks we provide."
+                                    }
                                 </p>
                             </Box.Child>
                             <Box.Child
@@ -212,7 +222,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Fast start</h3>
                                 <p>
-                                    Start your project with webpack 2, hot reloading and express framework with our boilerplate in seconds.
+                                    {
+                                        "Start your project with webpack 2, hot reloading and express framework with our boilerplate in seconds."
+                                    }
                                 </p>
                             </Box.Child>
                             <Box.Child
@@ -229,7 +241,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Themeable</h3>
                                 <p>
-                                    Inline styles are good, all Components support it. Create your theme in seconds just changing some variables.
+                                    {
+                                        "Inline styles are good, all Components support it. Easy to create themesm hundreds of variables available."
+                                    }
                                 </p>
                             </Box.Child>
                             <Box.Child
@@ -246,7 +260,9 @@ class Landing extends React.Component {
                                 />
                                 <h3>Made with love</h3>
                                 <p>
-                                    From a front-end developer to others front-end developers.
+                                    {
+                                        "From a front-end developer to others front-end developers. Suitup UI is Open Source and is released under MIT liscense."
+                                    }
                                 </p>
                             </Box.Child>
                         </Box>
@@ -258,6 +274,13 @@ class Landing extends React.Component {
                 >
                     <Container>
                         <h2 style={{ textAlign: "center" }}>Getting started</h2>
+                        <p style={{ textAlign: "center", marginTop: "2rem" }}>
+                            For a more detailed guide please visit the extended
+                            {" "}
+                            <Link to="/getting-started">
+                                getting started guide
+                            </Link>
+                        </p>
                         <Device devices={["mobile", "tablet", "desktop"]}>
                             <Tabs
                                 indicatorColor="#35D7BB"
@@ -284,7 +307,7 @@ class Landing extends React.Component {
                                         <pre className="lang-jsx">
                                             <PrismCode className="lang-jsx">
                                                 {
-                                                    "import \"../node_modules/suitup-ui/dist/suitup.ui.min.css\";\nimport { Layout, Container, Box, Button } from 'suitup-ui';"
+                                                    "import \"suitup-ui/dist/suitup.ui.min.css\";\nimport { Layout, Container, Box, Button } from 'suitup-ui';"
                                                 }
                                             </PrismCode>
                                         </pre>

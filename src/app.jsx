@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Routes from "./routes";
-import "../node_modules/suitup-ui/dist/suitup.ui.min.css";
+import "suitup-ui/src/styles/index.less";
 
 class App extends React.Component {
     constructor(props) {

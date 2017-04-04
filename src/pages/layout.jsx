@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    Device,
     Container,
     Header,
     Footer,
@@ -12,7 +13,8 @@ import {
     Card,
     Modal,
     Image,
-    Slider
+    Slider,
+    Navbar
 } from "suitup-ui";
 
 const Logo = props => {
@@ -65,8 +67,8 @@ class WebLayout extends React.Component {
         return (
             <Layout>
                 <Header fixed top>
-                    <Box horizontal>
-                        <Box.Child key={1}>
+                    <div>
+                        <div style={{float: "left", marginRight: "1rem"}}>
                             <Button
                                 menu
                                 type="button"
@@ -74,8 +76,22 @@ class WebLayout extends React.Component {
                             >
                                 <Icon name="menu" size={24} />
                             </Button>
-                        </Box.Child>
-                        <Box.Child key={2}>
+                        </div>
+                        <Device devices={["widescreen", "desktop", "tablet"]}>
+                        <div style={{float: "left"}}>
+                            <Navbar style={{float: "left"}}>
+                                <Navbar.Menu href="/" text="Home"/>
+                                <Navbar.Menu href="/getting-started" text="Getting Started"/>
+                                <Navbar.Menu text="Docs">
+                                    <Navbar.Submenu href="/components" text="Components"/>
+                                    <Navbar.Submenu href="/containers" text="Containers"/>
+                                    <Navbar.Submenu href="/responsive/devices" text="Responsive"/>
+                                    <Navbar.Submenu href="/theming" text="Theming"/>
+                                </Navbar.Menu>
+                            </Navbar>
+                        </div>
+                        </Device>
+                        <div style={{float: "right"}}>
                             <a
                                 href="https://github.com/erasmo-marin/suitup-ui"
                                 target="_blank"
@@ -91,8 +107,8 @@ class WebLayout extends React.Component {
                                     width="24px"
                                 />
                             </a>
-                        </Box.Child>
-                    </Box>
+                        </div>
+                    </div>
                 </Header>
                 <Menu
                     left
@@ -165,14 +181,31 @@ class WebLayout extends React.Component {
                             key={9}
                         />
                     </Menu.Item>
-                    <Menu.Item text="Responsive" key={5}>
+                    <Menu.Item text="Utils" key={5}>
+                        <Menu.SubItem
+                            text="Settings"
+                            href="/utils/settings"
+                            key={1}
+                        />
+                        <Menu.SubItem
+                            text="Scroll"
+                            href="/utils/scroll"
+                            key={2}
+                        />
+                        <Menu.SubItem
+                            text="Screen"
+                            href="/utils/screen"
+                            key={3}
+                        />
+                    </Menu.Item>
+                    <Menu.Item text="Responsive" key={6}>
                         <Menu.SubItem
                             text="Devices and breakpoints"
                             href="/responsive/devices"
                         />
                     </Menu.Item>
-                    <Menu.Item text="Theming" href="/theming" key={6} />
-                    <Menu.Item href="/fulldemo" text="Full demo" key={7} />
+                    <Menu.Item text="Theming" href="/theming" key={7} />
+                    <Menu.Item href="/fulldemo" text="Full demo" key={8} />
                 </Menu>
                 <div className="content" style={contentStyle}>
                     {this.props.children}

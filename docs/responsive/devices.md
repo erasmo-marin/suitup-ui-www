@@ -115,7 +115,9 @@ All Suitup components have the screen field in their states, it's because we use
 ```jsx
 import { suitupable } from "suitup";
 
-@suitupable
+//first argument is "listenScreen = true"
+//second argument is listenSettings = true"
+@suitupable(true, true)
 class myComponent extends React.Component {
 	...
 }

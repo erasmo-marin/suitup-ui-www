@@ -21,9 +21,20 @@ import container from '../../../docs/containers/container';
 import containers from '../../../docs/containers/index';
 import layout from '../../../docs/containers/layout';
 
+//utils
+import utils from '../../../docs/utils/index';
+import scroll from '../../../docs/utils/scroll';
+import settings from '../../../docs/utils/settings';
+import screen from '../../../docs/utils/screen';
+
 //responsive
 import responsive from '../../../docs/responsive/index';
 import devices from '../../../docs/responsive/devices';
+
+//guides
+import guides from '../../../docs/guides/index';
+import philosophy from '../../../docs/guides/philosophy';
+import gettingStarted from '../../../docs/guides/getting-started';
 
 //theming
 import theming from '../../../docs/theming/index';
@@ -32,10 +43,10 @@ import Markdown from './markdown';
 
 
 const docsMap = {
-    index: {
+    "index": {
         index: index
     },
-    components: {
+    "components": {
         index: components,
         button: button,
         card: card,
@@ -47,18 +58,30 @@ const docsMap = {
         slider: slider,
         placeholders: placeholders
     },
-    containers: {
+    "containers": {
         index: containers,
         box: box,
         container: container,
         layout: layout
     },
-    responsive: {
+    "utils": {
+        index: utils,
+        scroll: scroll,
+        screen: screen,
+        settings: settings
+    },
+    "responsive": {
         index: responsive,
         devices: devices
     },
-    theming: {
+    "theming": {
         index: theming
+    },
+    "getting-started": {
+        index: gettingStarted
+    },
+    "guides": {
+        index: guides
     }
 }
 
