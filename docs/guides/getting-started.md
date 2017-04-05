@@ -84,14 +84,14 @@ import "suitup-ui/src/styles/index.less";
 
 
 
-## Start from scratch using the boilerplate
+## Start from scratch using the boilerplate (comming soon)
 
-We provide a boilerplate with Suitup, Express framework, webpack 2 and hot reloading enabled and ready to work. Also, it's ready for production if you run it with `NODE_ENV="production"`
+We will provide a boilerplate with Suitup, Express framework, webpack 2 and hot reloading enabled and ready to work. Also, it's ready for production.
 
 Just clone the project, install the dependencies and you are done. We recommend you to use yarn instead of npm, you will find that the scripts in the scripts section in package.json uses yarn, if you don't want to use yarn, just change it to npm.
 
 ```bash
-$ git clone blablabla myProject
+$ git clone [repo] myProject
 $ cd myProject
 $ yarn
 $ yarn run serve #Start in dev mode at port 3000
