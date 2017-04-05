@@ -21,8 +21,9 @@ import {
     Device,
     P
 } from "suitup-ui";
+import Page from "./page";
 
-class Index extends React.Component {
+@Page class Index extends React.Component {
     constructor(props) {
         super(props);
         this.toggleMenu = ::this.toggleMenu;

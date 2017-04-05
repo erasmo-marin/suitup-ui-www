@@ -19,7 +19,9 @@ import {
 } from "suitup-ui";
 import { Link } from "react-router-dom";
 import { PrismCode } from "react-prism";
+import Page from "../page";
 
+@Page
 class Landing extends React.Component {
     constructor(props) {
         super(props);

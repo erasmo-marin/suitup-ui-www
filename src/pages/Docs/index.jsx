@@ -40,6 +40,7 @@ import gettingStarted from '../../../docs/guides/getting-started';
 import theming from '../../../docs/theming/index';
 
 import Markdown from './markdown';
+import Page from "../page";
 
 
 const docsMap = {
@@ -85,7 +86,7 @@ const docsMap = {
     }
 }
 
-class Docs extends React.Component {
+@Page class Docs extends React.Component {
 
     constructor (props) {
         super(props);
