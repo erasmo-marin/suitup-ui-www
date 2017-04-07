@@ -349,10 +349,10 @@ class Landing extends React.Component {
                             <Box columns={12} gutter="4rem">
                                 <Box.Child wide={6} key={1}>
                                     <h4 style={{ textAlign: "center" }}>
-                                        Adding it to your project
+                                        { "Adding it to your project" }
                                     </h4>
                                     <p>
-                                        Install Suitup UI and peer dependencies:
+                                        { "Install Suitup UI and peer dependencies:" }
                                     </p>
                                     <pre className="lang-jsx">
                                         <PrismCode className="lang-jsx">
@@ -362,7 +362,7 @@ class Landing extends React.Component {
                                         </PrismCode>
                                     </pre>
                                     <p>
-                                        Import the styles and the components you need:
+                                        { "Import the styles and the components you need:" }
                                     </p>
                                     <pre className="lang-jsx">
                                         <PrismCode className="lang-jsx">
@@ -374,23 +374,23 @@ class Landing extends React.Component {
                                 </Box.Child>
                                 <Box.Child wide={6} key={2}>
                                     <h4 style={{ textAlign: "center" }}>
-                                        Running the included demo
+                                        { "Hack on this website to see how it works" }
                                     </h4>
-                                    <p>Clone Suitup UI repo:</p>
+                                    <p>{ "Clone Suitup UI website repo:" }</p>
                                     <pre className="lang-bash">
                                         <PrismCode className="lang-bash">
                                             {
-                                                "$ git clone https://github.com/erasmo-marin/suitup-ui.git\n$ cd suitup-ui"
+                                                "$ git clone https://github.com/erasmo-marin/suitup-ui-www.git\n$ cd suitup-ui"
                                             }
                                         </PrismCode>
                                     </pre>
                                     <p>
-                                        Install dependencies and run:
+                                        { "Install dependencies and run:" }
                                     </p>
                                     <pre className="lang-jsx">
                                         <PrismCode className="lang-jsx">
                                             {
-                                                "$ npm install\n# npm install -g less\n$ npm run demo"
+                                                "$ yarn\n$ yarn run serve"
                                             }
                                         </PrismCode>
                                     </pre>
