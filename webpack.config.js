@@ -68,7 +68,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [".js", ".jsx", ".md", ".json", ".less"]
+        extensions: [".js", ".jsx", ".md", ".json", ".less"],
+        alias: {
+          'react': 'preact-compat/dist/preact-compat',
+          'react-dom': 'preact-compat/dist/preact-compat'          
+        }
     },
     plugins: [
         new webpack.DefinePlugin({
