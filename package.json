@@ -79,5 +79,8 @@
   "bugs": {
     "url": "https://github.com/erasmo-marin/suitup-ui-www/issues"
   },
-  "homepage": "https://suitup-ui.org"
+  "homepage": "https://suitup-ui.org",
+  "devDependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0"
+  }
 }

@@ -33,6 +33,7 @@ module.exports = {
                         "jsx-control-statements",
                         "transform-function-bind",
                         "transform-class-properties",
+                        "syntax-dynamic-import",
                         "lodash"
                     ]
                 }

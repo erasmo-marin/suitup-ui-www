@@ -27,7 +27,10 @@ class Landing extends React.Component {
         super(props);
     }
 
-    scrollToGettingStarted = () => Scroll.to(this._gettingStarted, 1000);
+    scrollToGettingStarted = () => {
+        console.log("CLICK");
+        Scroll.to(this._gettingStarted, 1000);
+    }
 
     render() {
         const heroStyle = {

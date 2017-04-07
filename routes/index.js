@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('*', function(req, res, next) {
     res.render('index', {
         title: 'Suitup UI Toolkit',
-        isProduction: (process.env.NODE_ENV == "production")
+        isProduction: (process.env.NODE_ENV == "production"),
+        version: JSON.stringify(require("../package.json").version)
     });
 });
 

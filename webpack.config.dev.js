@@ -34,6 +34,7 @@ module.exports = {
                         "react-hot-loader/babel",
                         "jsx-control-statements",
                         "transform-function-bind",
+                        "syntax-dynamic-import",
                         "lodash"
                     ]
                 }
