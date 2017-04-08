@@ -116,22 +116,25 @@ class WebLayout extends React.Component {
                     onHide={this.onMenuHide}
                 >
                     <Menu.Header title="Suitup UI" icon={logo} key={1} />
-                    <Menu.Item href="/" text="Home" key={2} />
+                    <Menu.Item href="/" text="Home" key={2} hideOnRedirect/>
                     <Menu.Item text="Containers" key={3}>
                         <Menu.SubItem
                             text="Layout"
                             href="/containers/layout"
                             key={1}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Container"
                             href="/containers/container"
                             key={2}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Box"
                             href="/containers/box"
                             key={3}
+                            hideOnRedirect
                         />
                     </Menu.Item>
                     <Menu.Item text="Components" key={4}>
@@ -139,46 +142,55 @@ class WebLayout extends React.Component {
                             text="Button"
                             href="/components/button"
                             key={1}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Card"
                             href="/components/card"
                             key={2}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Header"
                             href="/components/header"
                             key={3}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Icon"
                             href="/components/icon"
                             key={4}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Image"
                             href="/components/image"
                             key={5}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Menu"
                             href="/components/menu"
                             key={6}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Modal"
                             href="/components/modal"
                             key={7}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Slider"
                             href="/components/slider"
                             key={8}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Placeholders"
                             href="/components/placeholders"
                             key={9}
+                            hideOnRedirect
                         />
                     </Menu.Item>
                     <Menu.Item text="Utils" key={5}>
@@ -186,26 +198,30 @@ class WebLayout extends React.Component {
                             text="Settings"
                             href="/utils/settings"
                             key={1}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Scroll"
                             href="/utils/scroll"
                             key={2}
+                            hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Screen"
                             href="/utils/screen"
                             key={3}
+                            hideOnRedirect
                         />
                     </Menu.Item>
                     <Menu.Item text="Responsive" key={6}>
                         <Menu.SubItem
                             text="Devices and breakpoints"
                             href="/responsive/devices"
+                            hideOnRedirect
                         />
                     </Menu.Item>
-                    <Menu.Item text="Theming" href="/theming" key={7} />
-                    <Menu.Item href="/fulldemo" text="Full demo" key={8} />
+                    <Menu.Item text="Theming" href="/theming" key={7} hideOnRedirect/>
+                    <Menu.Item href="/fulldemo" text="Full demo" key={8} hideOnRedirect/>
                 </Menu>
                 <div className="content" style={contentStyle}>
                     {this.props.children}
