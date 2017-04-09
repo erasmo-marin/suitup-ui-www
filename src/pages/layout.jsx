@@ -175,21 +175,33 @@ class WebLayout extends React.Component {
                             hideOnRedirect
                         />
                         <Menu.SubItem
+                            text="Navbar"
+                            href="/components/navbar"
+                            key={7}
+                            hideOnRedirect
+                        />
+                        <Menu.SubItem
                             text="Modal"
                             href="/components/modal"
-                            key={7}
+                            key={8}
                             hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Slider"
                             href="/components/slider"
-                            key={8}
+                            key={9}
                             hideOnRedirect
                         />
                         <Menu.SubItem
                             text="Placeholders"
                             href="/components/placeholders"
-                            key={9}
+                            key={10}
+                            hideOnRedirect
+                        />
+                        <Menu.SubItem
+                            text="Paragraph"
+                            href="/components/paragraph"
+                            key={11}
                             hideOnRedirect
                         />
                     </Menu.Item>

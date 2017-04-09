@@ -34,7 +34,7 @@ Currently, the blur is done using the fliter css property, this can cause ugly b
 
 ### Props
 
-| Name           |     Type      | Description                              |
+| Prop           |     Type      | Description                              |
 | :------------- | :-----------: | :--------------------------------------- |
 | src            | obj \| string | The image source url or an object with the low quality and high quality urls. |
 | type           |    string     | The desired aspect ratio.                |

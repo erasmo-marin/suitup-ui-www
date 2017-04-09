@@ -11,4 +11,7 @@ Suitup UI Components are pieces of software that can interact with the user or d
 5. [Image](/components/image)
 6. [Menu](/components/menu)
 7. [Modal](/components/modal)
-8. [Slider](/components/slider)
+8. [Navbar](/components/navbar)
+9. [Slider](/components/slider)
+10. [Placeholders](/components/placeholders)
+11. [Paragraph](/components/paragraph)
