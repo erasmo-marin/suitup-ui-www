@@ -28,8 +28,7 @@ class Landing extends React.Component {
     }
 
     scrollToGettingStarted = () => {
-        console.log("CLICK");
-        Scroll.to(this._gettingStarted, 1000);
+        Scroll.to(this._gettingStarted, 1000, 64, "easeInOut", 3);
     }
 
     render() {
