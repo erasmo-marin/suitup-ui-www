@@ -143,7 +143,6 @@ class WebLayout extends React.Component {
                             href="/components/button"
                             key={1}
                             hideOnRedirect
-                            active
                         />
                         <Menu.SubItem
                             text="Card"

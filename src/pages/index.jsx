@@ -98,6 +98,7 @@ import Page from "./page";
         return (
             <div>
                 <Modal
+                    hideOnBlur
                     visible={this.state.modalVisible}
                     onChange={this.onModalChange}
                     style={{
