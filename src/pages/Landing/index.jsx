@@ -98,6 +98,7 @@ class Landing extends React.Component {
                                         ]}
                                     >
                                         <Image
+                                            instance={ c => this._image = c }
                                             width="100%"
                                             type="square"
                                             src="/img/logo-big.png"
