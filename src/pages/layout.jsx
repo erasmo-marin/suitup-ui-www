@@ -68,7 +68,7 @@ class WebLayout extends React.Component {
             <Layout>
                 <Header fixed top>
                     <div>
-                        <div style={{float: "left", marginRight: "1rem"}}>
+                        <div style={{ float: "left", marginRight: "1rem" }}>
                             <Button
                                 menu
                                 type="button"
@@ -77,21 +77,36 @@ class WebLayout extends React.Component {
                                 <Icon name="menu" size={24} />
                             </Button>
                         </div>
-                        <Device devices={["widescreen", "desktop", "tablet"]}>
-                        <div style={{float: "left"}}>
-                            <Navbar style={{float: "left"}}>
-                                <Navbar.Menu href="/" text="Home"/>
-                                <Navbar.Menu href="/getting-started" text="Getting Started"/>
-                                <Navbar.Menu text="Docs">
-                                    <Navbar.Submenu href="/components" text="Components"/>
-                                    <Navbar.Submenu href="/containers" text="Containers"/>
-                                    <Navbar.Submenu href="/responsive/devices" text="Responsive"/>
-                                    <Navbar.Submenu href="/theming" text="Theming"/>
-                                </Navbar.Menu>
-                            </Navbar>
-                        </div>
+                        <Device devices={["fullHd", "widescreen", "desktop", "tablet"]}>
+                            <div style={{ float: "left" }}>
+                                <Navbar style={{ float: "left" }}>
+                                    <Navbar.Menu href="/" text="Home" />
+                                    <Navbar.Menu
+                                        href="/getting-started"
+                                        text="Getting Started"
+                                    />
+                                    <Navbar.Menu text="Docs">
+                                        <Navbar.Submenu
+                                            href="/components"
+                                            text="Components"
+                                        />
+                                        <Navbar.Submenu
+                                            href="/containers"
+                                            text="Containers"
+                                        />
+                                        <Navbar.Submenu
+                                            href="/responsive/devices"
+                                            text="Responsive"
+                                        />
+                                        <Navbar.Submenu
+                                            href="/theming"
+                                            text="Theming"
+                                        />
+                                    </Navbar.Menu>
+                                </Navbar>
+                            </div>
                         </Device>
-                        <div style={{float: "right"}}>
+                        <div style={{ float: "right" }}>
                             <a
                                 href="https://github.com/erasmo-marin/suitup-ui"
                                 target="_blank"
@@ -116,7 +131,7 @@ class WebLayout extends React.Component {
                     onHide={this.onMenuHide}
                 >
                     <Menu.Header title="Suitup UI" icon={logo} key={1} />
-                    <Menu.Item href="/" text="Home" key={2} hideOnRedirect/>
+                    <Menu.Item href="/" text="Home" key={2} hideOnRedirect />
                     <Menu.Item text="Containers" key={3}>
                         <Menu.SubItem
                             text="Layout"
@@ -232,8 +247,18 @@ class WebLayout extends React.Component {
                             hideOnRedirect
                         />
                     </Menu.Item>
-                    <Menu.Item text="Theming" href="/theming" key={7} hideOnRedirect/>
-                    <Menu.Item href="/fulldemo" text="Full demo" key={8} hideOnRedirect/>
+                    <Menu.Item
+                        text="Theming"
+                        href="/theming"
+                        key={7}
+                        hideOnRedirect
+                    />
+                    <Menu.Item
+                        href="/fulldemo"
+                        text="Full demo"
+                        key={8}
+                        hideOnRedirect
+                    />
                 </Menu>
                 <div className="content" style={contentStyle}>
                     {this.props.children}
@@ -244,8 +269,8 @@ class WebLayout extends React.Component {
                             Created by{" "}
                             <a href="https://github.com/erasmo-marin">
                                 @erasmo-marin
-                            </a>
-                            {" "}with ❤️{" "}
+                            </a>{" "}
+                            with ❤️{" "}
                         </p>
                         <Box columns={15} justify="center">
                             <Box.Child
@@ -253,9 +278,7 @@ class WebLayout extends React.Component {
                                 wides={{ mobile: 5, tablet: 5 }}
                                 key={1}
                             >
-                                <a
-                                    href="https://github.com/erasmo-marin/suitup-ui"
-                                >
+                                <a href="https://github.com/erasmo-marin/suitup-ui">
                                     Github repo
                                 </a>
                             </Box.Child>
@@ -264,9 +287,7 @@ class WebLayout extends React.Component {
                                 wides={{ mobile: 5, tablet: 5 }}
                                 key={2}
                             >
-                                <a
-                                    href="https://www.npmjs.com/package/suitup-ui"
-                                >
+                                <a href="https://www.npmjs.com/package/suitup-ui">
                                     Suitup on NPM
                                 </a>
                             </Box.Child>
@@ -275,9 +296,7 @@ class WebLayout extends React.Component {
                                 wides={{ mobile: 5, tablet: 5 }}
                                 key={3}
                             >
-                                <a
-                                    href="https://github.com/erasmo-marin/suitup-ui/issues/new"
-                                >
+                                <a href="https://github.com/erasmo-marin/suitup-ui/issues/new">
                                     Report a bug
                                 </a>
                             </Box.Child>

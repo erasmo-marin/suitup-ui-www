@@ -12,6 +12,7 @@
     "build": "webpack --progress --colors"
   },
   "dependencies": {
+    "@zippytech/react-notify-resize": "https://github.com/erasmo-marin/react-notify-resize.git#^v3.0.1",
     "babel": "^6.5.2",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.22.1",
@@ -49,11 +50,12 @@
     "morgan": "^1.8.1",
     "pm2": "^2.4.5",
     "postcss-loader": "^2.0.6",
+    "prop-types": "^15.5.0",
     "raw-loader": "^0.5.1",
-    "react": "^15.5.3",
+    "react": "^16.0.0",
     "react-addons-pure-render-mixin": "^15.4.2",
     "react-addons-test-utils": "^15.4.0",
-    "react-dom": "^15.5.3",
+    "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-prism": "^4.0.0",
     "react-router-dom": "^4.0.0",

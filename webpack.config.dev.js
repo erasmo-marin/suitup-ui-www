@@ -4,7 +4,7 @@ var webpack = require("webpack");
 module.exports = {
     context: __dirname,
     cache: true,
-    devtool: "cheap-module-eval-source-map",
+    devtool: "source-map",
     entry: [
         "webpack-hot-middleware/client",
         "react-hot-loader/patch",

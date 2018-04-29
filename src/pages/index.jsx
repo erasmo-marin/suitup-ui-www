@@ -18,6 +18,7 @@ import {
     Tablet,
     Desktop,
     Widescreen,
+    Fullhd,
     Device,
     P
 } from "suitup-ui";
@@ -36,14 +37,18 @@ import Page from "./page";
             modalVisible: false,
             sliderSettings: {
                 autoPlay: false,
-                autoPlayDuration: 0,
+                autoPlayDuration: 10000,
                 showArrows: true,
                 showDots: true,
-                centerMode: false, //show the other sliders and the current slider in the middle
+                centerMode: true, //show the other sliders and the current slider in the middle
+                centerModePadding: 100,
                 displayItems: 1, //the number of items to display
                 arrowSize: 36, //the arrow font size, should be 16, 24, 36 or 48
                 lazyLoad: true, //when true, the slider only loads the slides when needed
-                minimalRender: false //when true, the unused slides are not rendered, can cause some lag
+                minimalRender: false, //when true, the unused slides are not rendered, can cause some lag
+                slidesSpacing: 10,
+                slideStep: 1,
+                infinite: true
             }
         };
     }
@@ -77,7 +82,8 @@ import Page from "./page";
             mobile: 12,
             tablet: 6,
             desktop: 6,
-            widescreen: 6
+            widescreen: 6,
+            fullHd: 6
         };
 
         let responsiveStyles = {
@@ -92,6 +98,9 @@ import Page from "./page";
             },
             widescreen: {
                 color: "purple"
+            },
+            fullHd: {
+                color: "pink"
             }
         };
 
@@ -168,7 +177,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                Hola
+                                Hi
                             </div>
                         </Box.Child>
                         <Box.Child key={2} wide={2}>
@@ -182,7 +191,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                Soy
+                                I am
                             </div>
                         </Box.Child>
                         <Box.Child key={3} wide={1}>
@@ -196,7 +205,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                una
+                                a
                             </div>
                         </Box.Child>
                         <Box.Child key={4} wide={2}>
@@ -210,7 +219,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                grilla
+                                grid
                             </div>
                         </Box.Child>
                         <Box.Child key={5} wide={3}>
@@ -224,7 +233,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                con 6 columnas
+                                with 6 columns
                             </div>
                         </Box.Child>
                         <Box.Child key={6} wide={3}>
@@ -238,7 +247,7 @@ import Page from "./page";
                                     borderRadius: "4px"
                                 }}
                             >
-                                y 6 Box.Child
+                                and 6 Box.Child
                             </div>
                         </Box.Child>
                     </Box>
@@ -252,14 +261,7 @@ import Page from "./page";
                         A photo? An action call? you choose.`
                         }
                     </p>
-                    <p>
-                        El slider de Suitup UI implementa lazyload, que renderiza tus slides en el momento de
-
-                        necesitarse, y minimalRender, que sólo renderiza los slides que se están ocupando, para casos
-
-                        donde la cantidad de slides es muy grande.
-                    </p>
-                    <Slider settings={this.state.sliderSettings}>
+                    <Slider {...this.state.sliderSettings}>
                         <Slider.Slide key={1}>
                             <Image
                                 src={{
@@ -271,17 +273,13 @@ import Page from "./page";
                             >
                                 <Image.Vail>
                                     <Container>
-                                        <h1>Hola, bienvenido a Suitup</h1>
+                                        <h1>This is the suitup Slider</h1>
                                         <h4>
-                                            Los sliders pueden contener cualquier componente
+                                            The suitup slider implements most of the options
+                                            available in slick-react: center mode, infinite slides,
+                                            multiple items at same time, responsive breakpoints,
+                                            etc... but with a smaller code base and better performance.
                                         </h4>
-                                        <Button
-                                            type="button"
-                                            style={{ marginTop: "50px" }}
-                                            onClick={this.openModal}
-                                        >
-                                            Abrir Modal
-                                        </Button>
                                     </Container>
                                 </Image.Vail>
                             </Image>
@@ -298,20 +296,10 @@ import Page from "./page";
                                 <Image.Vail>
                                     <Container>
                                         <h3 style={{ color: "#fff" }}>
-                                            Lazy load
+                                            Infinite mode
                                         </h3>
                                         <h5 style={{ color: "#fff" }}>
-                                            El componente de Slider incluye la opción de
-
-                                            Lazyload. En este modo, los slides se renderizan
-
-                                            {" "}
-
-                                            r primera vez cuando se van a necesitar. Ideal para
-
-                                            {" "}
-
-                                            galerías fotográficas.
+                                            Infinite mode is supported
                                         </h5>
                                     </Container>
                                 </Image.Vail>
@@ -329,12 +317,10 @@ import Page from "./page";
                                 <Image.Vail>
                                     <Container>
                                         <h3 style={{ color: "#fff" }}>
-                                            Personalizable
+                                            Center mode
                                         </h3>
                                         <h5 style={{ color: "#fff" }}>
-                                            El slider te permite mostrar o esconder los puntos,
-
-                                            las flechas y cambiar el padding.
+                                            The suitup Slider also implements the center mode
                                         </h5>
                                     </Container>
                                 </Image.Vail>
@@ -355,7 +341,7 @@ import Page from "./page";
                                             Draggable
                                         </h3>
                                         <h5 style={{ color: "#fff" }}>
-                                            Arrastra el slide a la izquierda o a la derecha para pasar al slide siguiente o anterior.
+                                            Drag to move the slides
                                         </h5>
                                     </Container>
                                 </Image.Vail>
@@ -373,91 +359,31 @@ import Page from "./page";
                                 <Image.Vail>
                                     <Container>
                                         <h3 style={{ color: "#fff" }}>
-                                            Miniaturas
+                                            Responsive options
                                         </h3>
                                         <h5 style={{ color: "#fff" }}>
-                                            Muestra miniaturas en lugar de puntos para cambiar el slide (esto desactiva el lazy load)
+                                            Use the suitup responsive breakpoints in order to set options per breakpoint
                                         </h5>
-                                        <Button>Activar miniaturas</Button>
                                     </Container>
-                                </Image.Vail>
-                            </Image>
-                        </Slider.Slide>
-                        <Slider.Slide key={6}>
-                            <Image src="none" type="backdrop" width="100%">
-                                <Image.Vail>
-                                    <Box vertical columns={2}>
-                                        <Box.Child key={1}>
-                                            <Container>
-                                                <h3 style={{ color: "#fff" }}>
-                                                    Más de un item por slide
-                                                </h3>
-                                                <h5 style={{ color: "#fff" }}>
-                                                    No es necesario como opción, la flexibilidad de Box
-
-                                                    te permite construir este tipo de layouts con el mínimo
-
-                                                    esfuerzo.
-                                                </h5>
-                                            </Container>
-                                        </Box.Child>
-                                        <Box.Child key={2}>
-                                            <Box
-                                                horizontal
-                                                centered
-                                                columns={2}
-                                            >
-                                                <Box.Child key={1} wide={1}>
-                                                    <Container>
-                                                        <Image
-                                                            centered
-                                                            src={{
-                                                                hq: "/img/stock-6-hq.jpg",
-                                                                lq: "/img/stock-6-lq.jpg"
-                                                            }}
-                                                            type="mediumh"
-                                                            width="80%"
-                                                        />
-                                                    </Container>
-                                                </Box.Child>
-                                                <Box.Child key={2} wide={1}>
-                                                    <Container>
-                                                        <Image
-                                                            centered
-                                                            src={{
-                                                                hq: "/img/stock-1-hq.jpg",
-                                                                lq: "/img/stock-1-lq.jpg"
-                                                            }}
-                                                            type="mediumh"
-                                                            width="80%"
-                                                        />
-                                                    </Container>
-                                                </Box.Child>
-                                            </Box>
-                                        </Box.Child>
-                                    </Box>
                                 </Image.Vail>
                             </Image>
                         </Slider.Slide>
                     </Slider>
                 </Container>
                 <Container>
-                    <h3>Modales</h3>
+                    <h3>Modals</h3>
                     <p>
-                        Los modales sirven para mostrar información bloqueando la interacción del usuario con
-
-                        {" "}
-
-                        la vista principal. El modal de SuitUp UI incluye animación y blur.
+                        Modals allows you to show information or actions to the user, blocking the interaction
+                        with the current page, without going to another context.
                     </p>
                     <Button type="button" onClick={this.openModal}>
-                        Abrir Modal
+                        Open modal
                     </Button>
                 </Container>
                 <Container>
                     <h3>Cards</h3>
                     <p>
-                        Las tarjetas sirven como punto de entrada para información detallada.
+                        Cards are an enter point for more detailed information
                     </p>
                     <Container>
                         <Container>
@@ -534,13 +460,9 @@ import Page from "./page";
                             </Box>
                         </Container>
                     </Container>
-                    <h3>Tarjetas con distintos layouts</h3>
+                    <h3>Cards any way you want</h3>
                     <p>
-                        Puedes construir tu tarjeta de la manera que se te de la gana. Utiliza el componente
-
-                        Box para mostrar el contenido con distintas orientaciones y proporciones. No te imponemos
-
-                        una forma única de hacer las cosas.
+                        The Card component is just a container, you can put anything inside.
                     </p>
                     <Container>
                         <Container>
@@ -700,24 +622,14 @@ import Page from "./page";
                             </Box>
                         </Container>
                     </Container>
-                    <h3>Imágenes</h3>
+                    <h3>Images</h3>
                     <p>
-                        El componente de imagen mantiene el aspect ratio deseado aunque tu imagen
-
-                        {" "}
-
-                        no los tenga (aunque idealmente debería tenerlo). Si deseas un contenedor
-
-                        {" "}
-
-                        que mantenga el aspect ratio, puedes usar el componente de imagen junto a
-
-                        el prop src='none'.
+                        The Image component is used to display an image inside, keeping
+                        an aspect ratio. It also supports loading on scroll, high quality
+                        and low quality versions of the image, and blur.
                     </p>
                     <p>
-                        Suitup incluye un conjunto de aspect ratio por defecto recomendados los cuales
-
-                        pueden cambiarse desde el archivo de configuración, estos son:
+                        Suitup includes a set of pre-defined aspect ratios:
                     </p>
                     <ul>
                         <li>Square (1:1)</li>
@@ -729,7 +641,7 @@ import Page from "./page";
                         <li>Banner (5:1)</li>
                     </ul>
                     <Container>
-                        <h3>mala</h3>
+                        <h3>Example</h3>
                         <Box horizontal columns={3}>
                             <Box.Child key={1} wide={1}>
                                 <Image
@@ -813,11 +725,16 @@ import Page from "./page";
                             {"Hi, I'm just visible on Widescreen!"}
                         </p>
                     </Widescreen>
+                    <Fullhd>
+                        <p style={{ textAlign: "center", color: "pink" }}>
+                            {"Hi, I'm just visible on Fullhd!"}
+                        </p>
+                    </Fullhd>
                     <Container style={responsiveStyles}>
                         {
                             `This text is red in mobile, blue in tablet, green in
-                           desktop and purple in widescreen. That's because this
-                           container is using responsive styles`
+                           desktop, purple in widescreen and pink in fullHd. That's because this
+                           container is using responsive containers`
                         }
                     </Container>
                 </Container>
